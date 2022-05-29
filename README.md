@@ -11,7 +11,7 @@ Starting out, we do not have a list of all current Runescape 3 items that we may
 
 We will send the new information to our database. 
 
-Once we have a starting list, this script can be run every once in a while to update the analyzer with new items added to the game, without the need for a manual check each time this happens. We can shorten the time by shortening the list that we check the grandexchange site, by removing any items that we have already searched for in the past from the list. 
+Once we have a starting list, this script can be run every once in a while to update the analyzer with new items added to the game, without the need for a manual check each time this happens. We can reduce proccessing time by shortening the list of item names used to check the grandexchange site by removing any items that have already been entered into the database. 
 
 ### Logged Item Scraper - script 2
 
