@@ -1,6 +1,9 @@
 # Runescape_GE_Analyzer
 ## Tool to initially scrape Runescape 3 item IDs for tradeable items, use those IDs to gather price data daily, then run analysis on the gathered data. Tool consists of two halves: webscraping and analysis.
 
+## General
+
+Runescape is an online MMORPG, with many of the flavors of other games of its type. One of the more interesting components of the game is an exchange system, called the Grand Exchange. On the Grand Exchange players are able to trade items with other players using gold coins as a currency. Based on item supply and demand, prices fluctuate daily. I plan to examine price fluctuations in relation to game events such as double xp weekends, skill updates, game patches, etc...
 
 
 ## Webscraping
