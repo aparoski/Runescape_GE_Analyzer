@@ -20,3 +20,7 @@ Once we scrape the initial item information for most of the grand exchange items
 The information will be sent to the database. 
 
 this script is set to run automatically each day at 06:00 UTC. 
+
+## Analysis
+
+Once some more data has been collected, we will start with analysis. 
