@@ -33,7 +33,7 @@ conn.close()
 
 #webscraping ------------------------------------------------------------------
 prices = []
-for index, row in Runescape_Items.iloc[0:10, :].iterrows():
+for index, row in Runescape_Items.iterrows():
     req = requests.get(str(row["NAME_URL"]).strip())
     soup = bs(req.content, 'html.parser')
     
