@@ -56,9 +56,10 @@ price_df = pd.DataFrame(prices, columns = ["NAME", "NAME_ID", "Price", "Date"])
 
 price_df = price_df.astype({"NAME" : 'string', "Date" : "datetime64[ns]"})
 
-#perform inner join to check for item prices that have already been entered
-#into the database
-to_database = Past_Prices.merge(price_df, on = ["NAME_ID", "Date"], how = 'inner')
+#perform right antijoin to collect any price updates that have not yet been
+#entered into the database
+to_database = Past_Prices.merge(price_df, on = ["NAME_ID", "Date"], how = 'outer', indicator = True)
+to_database = to_database[to_database._merge == 'right_only'].drop("_merge", axis = 1)
 
 #dataframe stuff --------------------------------------------------------------
 
