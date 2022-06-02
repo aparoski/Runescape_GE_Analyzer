@@ -78,7 +78,7 @@ if to_database.shape[0] > 0:
     for index, row in to_database.iterrows():
     
         query = "INSERT INTO dbo.RUNESCAPE_ITEMS_PRICES (NAME_ID, Price, Date) VALUES ('{}', '{}', '{}')".format(row["NAME_ID"],
-                                                                                                                 row["Price_x"],
+                                                                                                                 row["Price_y"],
                                                                                                                  row["Date"])
         
         print(query)
