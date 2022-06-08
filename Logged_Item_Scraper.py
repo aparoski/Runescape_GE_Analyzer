@@ -34,6 +34,9 @@ conn.close()
 #webscraping ------------------------------------------------------------------
 prices = []
 for index, row in Runescape_Items.iterrows():
+  
+    time.sleep(1.5)
+  
     req = requests.get(str(row["NAME_URL"]).strip())
     soup = bs(req.content, 'html.parser')
     
