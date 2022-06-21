@@ -24,6 +24,11 @@ The information will be sent to the database.
 
 this script is set to run automatically each day at 06:00 UTC. 
 
+### GE Historical data - script 3
+
+The runescape wiki contains historical data which can be accessed via their API: https://runescape.wiki/w/Help:APIs
+This code uses the API to collect all daily item prices from 2008 to today. 
+
 ## Analysis
 
-Once some more data has been collected, we will start with analysis. 
+Individual Analysis will be posted to the associated kaggle dataset: www.kaggle.com/dataset/a1ca952def9da4144f1a82279658e1c5608c3f79d5187eca206fd8f38db20fbc
