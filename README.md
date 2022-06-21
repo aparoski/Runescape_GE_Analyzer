@@ -10,7 +10,7 @@ Runescape is an online MMORPG, with many of the flavors of other games of its ty
 
 ### Initial Item Information - script 1
 
-** This method is inefficient and is going to be updated. ** Note that another method using the official GE website and its catalogue of item catagories provides a more extensive (and assumed exhaustive) list of items that are listed on the grand exchange: https://secure.runescape.com/m=itemdb_rs/catalogue 
+**This method is inefficient and is going to be updated.** Note that another method using the official GE website and its catalogue of item catagories provides a more extensive (and assumed exhaustive) list of items that are listed on the grand exchange: https://secure.runescape.com/m=itemdb_rs/catalogue 
 An update to the code is pending. 
 
 Starting out, we do not have a list of all current Runescape 3 items that we may find on the game's grand exchange. To fill this list out, we can collect the list of tradeable item names from the runescape fandom website and then use those names to search the runescape grand exchange site for additional item information.
