@@ -29,6 +29,8 @@ Runescape_Items = pd.read_sql_query(SQL, conn)
 
 conn.close()
 
+Runescape_Items = pd.read_csv("Runescape_Item_Names.csv")
+
 
 def epochms_to_dt(ms):
     s = int(ms) / 1000.0
