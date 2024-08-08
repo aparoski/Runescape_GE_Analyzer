@@ -8,26 +8,8 @@ import time
 import datetime
 
 import re
-
-import pyodbc
 from itertools import permutations
 
-#database stuff ---------------------------------------------------------------
-
-conn = pyodbc.connect(r'Driver={SQL Server};'
-                     r'Server=Helios;'
-                     r'Database=Data_Science_Hangout;'
-                     r'Trusted_Connection=yes;')
-
-cursor = conn.cursor()
-
-SQL = "SELECT * FROM dbo.RUNESCAPE_ITEMS_NAMES"
-
-Runescape_Items = pd.read_sql_query(SQL, conn)
-
-conn.close()
-
-#database stuff ---------------------------------------------------------------
 
 driver = webdriver.Chrome(r"A:\Data Science\Programming\Webdrivers\chromedriver_101.exe") #replace with the up to date version of chrome driver
 driver.get("https://runescape.fandom.com/wiki/Category:Tradeable_items")
@@ -190,50 +172,6 @@ if len(item_names_update) != 0:
     #transform any apostrophes in the item names so that they can be entered into the database
     to_database["Name_db"] = to_database["Name"].map(lambda x: x.replace("'", "''"))
     
-    
-    #database stuff ---------------------------------------------------------------
-    
-    conn = pyodbc.connect(r'Driver={SQL Server};'
-                         r'Server=Helios;'
-                         r'Database=Data_Science_Hangout;'
-                         r'Trusted_Connection=yes;')
-    
-    #insert all names into the database
-    
-    for index, row in to_database.iterrows():
-    
-        query_1 = "INSERT INTO dbo.RUNESCAPE_ITEMS_NAMES (Name, Name_ID) VALUES ('{}', '{}')".format(row["Name_db"], 
-                                                                                                     row["Name_ID"])
-    
-        print(query_1)
-    
-        cursor.execute(query_1)
-        
-    #insert all names of items that have been found on the grand exchange site into the database
-        
-    to_database_found = to_database[(to_database["Name_ID"] != '-50') & (to_database["Name_ID"] != '-100')]
-        
-    for index, row in to_database_found.iterrows():
-    
-        query_1 = "INSERT INTO dbo.RUNESCAPE_ITEMS_PRICES (Name_ID, Price, Date) VALUES ('{}', '{}', '{}')".format(row["Name_ID"],
-                                                                                                                   row["Price"],
-                                                                                                                   row["Date"])
-        
-        print(query_1)
-        
-        query_2 = "INSERT INTO dbo.RUNESCAPE_ITEMS_URLS (Name_ID, Name_URL) VALUES ('{}', '{}')".format(row["Name_ID"],
-                                                                                                        row["URL"])
-        
-        print(query_2)
-        
-    
-        cursor.execute(query_1)
-        cursor.execute(query_2)
-    
-    conn.commit()
-    conn.close()
-    
-    #database stuff ---------------------------------------------------------------
     
 else:
     print("No new items")
