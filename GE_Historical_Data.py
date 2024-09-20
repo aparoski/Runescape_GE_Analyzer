@@ -22,7 +22,9 @@ def epochms_to_dt(ms):
     
 ID_df_list = []
 
-for i in Runescape_Items["Name_ID"]:
+for index, row in Runescape_Items.iterrows():
+
+    i = row["Name_ID"]
     
     req = requests.get('https://api.weirdgloop.org/exchange/history/rs/all?id=' + 
                        str(i).strip() + 
@@ -58,8 +60,10 @@ for i in Runescape_Items["Name_ID"]:
     
     ID_df_list.append(df)
 
-    print(i + " prices have been loaded")
+    print(row["Name"])
+
+    #time.sleep(10)
     
 GE_data_history = pd.concat(ID_df_list)
 
-GE_data_history.to_csv("ID_Prices.csv")
+GE_data_history.to_csv("ID_Prices.csv", index = False)
