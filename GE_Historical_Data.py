@@ -56,6 +56,9 @@ for index, row in Runescape_Items.iterrows():
     
     df['date']= pd.to_datetime(df['date'])
     
+    #Note that each page contains price data for all dates, so limiting to certain date range to save
+    #time is unnecessary
+    
     #df = df[df["date"] < datetime.datetime.strptime('2024-09-18', '%Y-%m-%d')]
     
     ID_df_list.append(df)
