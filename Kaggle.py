@@ -26,18 +26,18 @@ Rune_Dat = datasets[0]
 
 Rune_Dat
 
-rune_meta_data = kaggle.api.dataset_metadata_cli(Rune_Dat.ref)
+# rune_meta_data = kaggle.api.dataset_metadata_cli(Rune_Dat.ref)
 
-print(rune_meta_data)
+# print(rune_meta_data)
 
 dataset_name = "aparoski/runescape-grand-exchange-data"
 
-dataset_path = config.upper_dir + most_recent_local_dataset()
+dataset_path = most_recent_local_dataset()
 
-p1 = subprocess.run("kaggle datasets metadata -p" + dataset_path  + dataset_name, 
-                    shell = True, text = True, capture_output = True)
+p1 = subprocess.run("kaggle datasets init -p " + dataset_path, 
+                    shell = True)
 
-print(p1)
+print(p1.returncode)
 
 if __name__ == "__main__":
     print(most_recent_local_dataset())
