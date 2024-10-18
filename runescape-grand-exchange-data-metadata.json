@@ -1,0 +1,313 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataBiases": "cr:dataBiases",
+    "dataCollection": "cr:dataCollection",
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isEnumeration": "cr:isEnumeration",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "personalSensitiveInformation": "cr:personalSensitiveInformation",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "wd": "https://www.wikidata.org/wiki/"
+  },
+  "alternateName": "A Collection of Runescape 3 Grand Exchange price data dating back to 2008",
+  "citeAs": "10.34740/kaggle/dsv/9437767",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "license": {
+    "@type": "sc:CreativeWork",
+    "name": "CC0: Public Domain",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "distribution": [
+    {
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/aparoski/runescape-grand-exchange-data?datasetVersionNumber=13",
+      "contentSize": "166.379 MB",
+      "md5": "Kcv7d37q5i86dvsJp9Xpxg==",
+      "encodingFormat": "application/zip",
+      "@id": "archive.zip",
+      "@type": "cr:FileObject",
+      "name": "archive.zip",
+      "description": "Archive containing all the contents of the Runescape Grand Exchange Data dataset"
+    },
+    {
+      "contentUrl": "Runescape_GE_Analytics_2024-09-18/Runescape_Item_Names.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "Runescape_Item_Names.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "Runescape_Item_Names.csv",
+      "description": "A table linking Item IDs to their in-game names"
+    },
+    {
+      "contentUrl": "Runescape_GE_Analytics_2024-09-18/Runescape_Item_Prices.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "Runescape_Item_Prices.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "Runescape_Item_Prices.csv",
+      "description": "A collection of the trade information for every tradeable item in Runescape, as reported by the Grand Exchange. "
+    },
+    {
+      "contentUrl": "Runescape_GE_Analytics_2024-09-18/Runescape_Item_URLS.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "Runescape_Item_URLS.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "Runescape_Item_URLS.csv",
+      "description": "collection of item IDs and the URL from which one can access grand exchange data from the official Runescape website."
+    }
+  ],
+  "recordSet": [
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Runescape_Item_Names.csv_fileobject"
+            },
+            "extract": {
+              "column": "Name_ID"
+            }
+          },
+          "@id": "Runescape_Item_Names.csv/Name_ID",
+          "@type": "cr:Field",
+          "name": "Name_ID",
+          "description": "a unique identifier for an item"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Runescape_Item_Names.csv_fileobject"
+            },
+            "extract": {
+              "column": "Name"
+            }
+          },
+          "@id": "Runescape_Item_Names.csv/Name",
+          "@type": "cr:Field",
+          "name": "Name",
+          "description": "the item's in-game name"
+        }
+      ],
+      "@id": "Runescape_Item_Names.csv",
+      "@type": "cr:RecordSet",
+      "name": "Runescape_Item_Names.csv",
+      "description": "A table linking Item IDs to their in-game names"
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Runescape_Item_Prices.csv_fileobject"
+            },
+            "extract": {
+              "column": ""
+            }
+          },
+          "@id": "Runescape_Item_Prices.csv/",
+          "@type": "cr:Field",
+          "name": "",
+          "description": "Index"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Runescape_Item_Prices.csv_fileobject"
+            },
+            "extract": {
+              "column": "id"
+            }
+          },
+          "@id": "Runescape_Item_Prices.csv/id",
+          "@type": "cr:Field",
+          "name": "id",
+          "description": "an item's unique reference ID"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Runescape_Item_Prices.csv_fileobject"
+            },
+            "extract": {
+              "column": "price"
+            }
+          },
+          "@id": "Runescape_Item_Prices.csv/price",
+          "@type": "cr:Field",
+          "name": "price",
+          "description": "The average amount of coins an item has traded for on a particular date"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Runescape_Item_Prices.csv_fileobject"
+            },
+            "extract": {
+              "column": "volume"
+            }
+          },
+          "@id": "Runescape_Item_Prices.csv/volume",
+          "@type": "cr:Field",
+          "name": "volume",
+          "description": "the total number of items traded over the associated date"
+        },
+        {
+          "dataType": [
+            "sc:Date"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Runescape_Item_Prices.csv_fileobject"
+            },
+            "extract": {
+              "column": "date"
+            }
+          },
+          "@id": "Runescape_Item_Prices.csv/date",
+          "@type": "cr:Field",
+          "name": "date",
+          "description": "24 hour period over which trade volume and price averages are calculated. "
+        }
+      ],
+      "@id": "Runescape_Item_Prices.csv",
+      "@type": "cr:RecordSet",
+      "name": "Runescape_Item_Prices.csv",
+      "description": "A collection of the trade information for every tradeable item in Runescape, as reported by the Grand Exchange. "
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Runescape_Item_URLS.csv_fileobject"
+            },
+            "extract": {
+              "column": "Name_ID"
+            }
+          },
+          "@id": "Runescape_Item_URLS.csv/Name_ID",
+          "@type": "cr:Field",
+          "name": "Name_ID",
+          "description": "unique ID given to an item"
+        },
+        {
+          "dataType": [
+            "sc:Text",
+            "sc:URL"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Runescape_Item_URLS.csv_fileobject"
+            },
+            "extract": {
+              "column": "Name_URL"
+            }
+          },
+          "@id": "Runescape_Item_URLS.csv/Name_URL",
+          "@type": "cr:Field",
+          "name": "Name_URL",
+          "description": "Runescape's Grand Exchange webiste URL for the associated item"
+        }
+      ],
+      "@id": "Runescape_Item_URLS.csv",
+      "@type": "cr:RecordSet",
+      "name": "Runescape_Item_URLS.csv",
+      "description": "collection of item IDs and the URL from which one can access grand exchange data from the official Runescape website."
+    }
+  ],
+  "version": 13,
+  "keywords": [
+    "subject > culture and humanities > games > video games",
+    "technique > time series analysis",
+    "audience > beginner",
+    "audience > intermediate"
+  ],
+  "identifier": "10.34740/kaggle/dsv/9437767",
+  "isAccessibleForFree": true,
+  "includedInDataCatalog": {
+    "@type": "sc:DataCatalog",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com"
+  },
+  "creator": {
+    "@type": "sc:Person",
+    "name": "Anton",
+    "url": "/aparoski",
+    "image": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png"
+  },
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com/organizations/kaggle",
+    "image": "https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png"
+  },
+  "thumbnailUrl": "https://storage.googleapis.com/kaggle-datasets-images/2258220/3838327/c58431da17c40d90de267305025aad9d/dataset-card.jpg?t=2022-06-21-01-48-01",
+  "dateModified": "2024-09-19T19:33:25.923",
+  "datePublished": "2022-06-21T02:53:29.3098467",
+  "@type": "sc:Dataset",
+  "name": "Runescape Grand Exchange Data",
+  "url": "https://www.kaggle.com/datasets/aparoski/runescape-grand-exchange-data/versions/13",
+  "description": "The data set contains the daily price average for items listed on the Runescape 3 grand exchange from 2008 to today. Prices within the grand exchange fluctuate based on player supply and demand. \n\nNew data will be added annually, but it can also be added at different intervals upon request. \n\nRuneScape , sometimes referred to as RuneScape 3, is a fantasy massively multiplayer online role-playing game (MMORPG) developed and published by Jagex, first released in January 2001. RuneScape was originally a browser game built with the Java programming language, but was largely replaced by a standalone C++-coded client in 2016. The game has had over 200 million accounts created and is recognised by the Guinness World Records as the world's largest and most-updated free MMORPG. [Wiki](https://en.wikipedia.org/wiki/RuneScape)\n\nThe Grand Exchange (abbreviated as GE) is a trading system for players to buy and sell almost all tradeable items. Members have eight grand exchange slots in which they may trade items, however free players are limited to three. Traders do not need to advertise, meet each other, or even wait at the Grand Exchange for their trades to complete. [Wiki](https://runescape.wiki/w/Grand_Exchange)"
+}
