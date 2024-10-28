@@ -1,4 +1,15 @@
 import os
+import config
+import datetime
+
+def make_new_recent_folder():
+    """creates new folder"""
+    dir = config.upper_dir
+    today = datetime.datetime.strftime(datetime.date.today(), '%Y-%m-%d')
+    os.mkdir(dir + '\\' + "Runescape_GE_Analytics_" + today)
+
+
+
 
 
 def most_recent_local_dataset():
@@ -9,3 +20,6 @@ def most_recent_local_dataset():
     recent_folder = max(paths, key = os.path.getctime)
 
     return(recent_folder)
+
+if __name__ == "__main__":
+    make_new_recent_folder()
