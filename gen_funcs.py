@@ -1,16 +1,13 @@
 import os
+import shutil
 import config
 import datetime
 
-def make_new_recent_folder():
+def make_new_recent_folder() -> None:
     """creates new folder"""
     dir = config.upper_dir
     today = datetime.datetime.strftime(datetime.date.today(), '%Y-%m-%d')
     os.mkdir(dir + '\\' + "Runescape_GE_Analytics_" + today)
-
-
-
-
 
 def most_recent_local_dataset():
     """returns the latest updated runescape dataset folder path

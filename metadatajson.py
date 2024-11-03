@@ -16,7 +16,14 @@ def read_rune_meta():
 
 #set up the bits which will go to generating the metadata file
 #note to self - update the name field to pick up name directly from python dataframe
-def create_rune_JSON():
+def create_rune_JSON(price_data = None):
+    """creates the JSON metadata for Rune price data upload to kaggle
+    takes a pandas df as optional input"""
+
+    if price_data == None:
+        pass
+    else:
+        pass
 
     rune_meta = read_rune_meta()
 
