@@ -25,6 +25,6 @@ shutil.copyfile(Previous_data_loc + "//Runescape_Item_URLS.csv"
 
 #generate meta data json for folder
 
-metadatajson.write_rs_JSON(data_dump_loc + "//metadata.json")
+metadatajson.write_rs_JSON(data_dump_loc + "//dataset-metadata.json")
 
 #connect to kaggle through API and upload dataset

@@ -18,12 +18,14 @@ def read_rune_meta():
 #note to self - update the name field to pick up name directly from python dataframe
 def create_rune_JSON(price_data = None):
     """creates the JSON metadata for Rune price data upload to kaggle
-    takes a pandas df as optional input"""
+    takes a pandas df as optional input to directly collect column names"""
 
     if price_data == None:
         pass
     else:
         pass
+
+
 
     rune_meta = read_rune_meta()
 
@@ -33,7 +35,7 @@ def create_rune_JSON(price_data = None):
     id = "aparoski/runescape-grand-exchange-data"
     licenses = rune_meta["license"]
 
-    Names_Path = rune_meta["distribution"][1]["contentUrl"]
+    Names_Path = "Runescape_Item_Names.csv"
     Names_Desc = rune_meta["distribution"][1]["description"]
     Names_Fields = [{"name" : "Name_ID", 
                     "title" : "a unique identifier for an item", 
@@ -43,7 +45,7 @@ def create_rune_JSON(price_data = None):
                     "type" : "string"}]
 
 
-    Price_Path = rune_meta["distribution"][2]["contentUrl"]
+    Price_Path = "Runescape_Item_Prices.csv"
     Price_Desc = rune_meta["distribution"][2]["description"]
     Price_Fields =[{"name" : "id",
                     "title" : "an item's unique reference ID",
@@ -52,7 +54,7 @@ def create_rune_JSON(price_data = None):
                     "title" : "The average amount of coins an item has traded for on a particular date",
                     "type" : "integer"}]
 
-    URL_Path = rune_meta["distribution"][3]["contentUrl"]
+    URL_Path = "Runescape_Item_URLS.csv"
     URL_Desc = rune_meta["distribution"][3]["description"]
     URL_Fields = [{"name" : "Name_ID",
                 "title" : "Unique ID given to an item",
