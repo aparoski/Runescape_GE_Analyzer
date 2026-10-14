@@ -1,6 +1,7 @@
 import subprocess
 import config
 import gen_funcs
+import datetime
 
 
 
@@ -17,12 +18,18 @@ dataset_name = "aparoski/runescape-grand-exchange-data"
 
 dataset_path = gen_funcs.most_recent_local_dataset()
 
-# p1 = subprocess.run("kaggle datasets init -p " + dataset_path, 
-#                     shell = True)
+print(dataset_path)
 
-# print(p1.returncode)
+version_note = '"data_scrapped_on_' + datetime.datetime.strftime(datetime.datetime.today(), '%Y%m%d') + '"'
+
+command = "kaggle datasets version" + " -p " + dataset_path + " -m " + version_note 
+
+p1 = subprocess.run(command, 
+                    shell = True)
+
+print(p1.returncode)
 
 
 
 if __name__ == "__main__":
-    print(most_recent_local_dataset())
+    pass
